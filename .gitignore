@@ -19,3 +19,8 @@ __pycache__/
 *.pyc
 *.qrc
 *.ui
+
+# PyInstaller artifacts
+build/
+dist/
+*.spec
