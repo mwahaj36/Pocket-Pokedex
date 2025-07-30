@@ -28,7 +28,7 @@ A lightweight desktop app built with **Python** and **PyQt5** that lets you sear
 
 ## Download
 
-👉 [Download the latest release](https://github.com/mwahaj36/Pocket-Pokedox/releases) from the **Releases** section.
+👉 [Download the latest release](https://github.com/mwahaj36/Pocket-Pokedex/releases) from the **Releases** section.
 
 - ✅ Pre-built `.exe` for Windows available
 - 🧪 Python source version for Linux/macOS
