@@ -12,7 +12,6 @@ A lightweight and stylish desktop app built with **Python** and **PyQt5** that l
 
 - 🔍 **Search Pokémon by name** (e.g., `pikachu`, `charizard`)
 - 🧬 **Displays base stats** and type(s)
-- 🎨 **Custom fonts, dark theme & hover effects**
 - 🖼️ **Auto-fetches official Pokémon sprite**
 - ❌ Error handling for invalid names
 
