@@ -13,7 +13,7 @@ from io import BytesIO
 class Pokedex(QMainWindow):
     def __init__(self):
         super().__init__()
-                   # Create a central widget and set it
+        #Central Widget
         self.centralWidget = QWidget()
         self.setCentralWidget(self.centralWidget)
 
@@ -26,7 +26,7 @@ class Pokedex(QMainWindow):
         self.setWindowIcon(QIcon("src/logo.png"))
 
 
-        #INput
+        #Input
         inputLayout=QHBoxLayout()
         self.input=QLineEdit()
         self.input.setPlaceholderText("Enter Pokemon Name (e.g. pikachu)")
@@ -35,9 +35,19 @@ class Pokedex(QMainWindow):
         self.searchButton.clicked.connect(self.getPokemon)
         inputLayout.addWidget(self.input)
         inputLayout.addWidget(self.searchButton)
-        self.mainLayout.addWidget(self.Title)
-        self.mainLayout.addLayout(inputLayout)
 
+
+        #Body
+        self.displayLayout=QHBoxLayout()
+        self.image=QLabel("Pokemon Will Appear Here")
+        self.image.setAlignment(Qt.AlignCenter)
+        self.displayLayout.addWidget(self.image,2)
+
+
+        #combining all layout to the main one
+        self.mainLayout.addWidget(self.Title)
+        self.mainLayout.addLayout(self.displayLayout)
+        self.mainLayout.addLayout(inputLayout)
         self.InitUI()
     def getPokemon(self):
         pass
