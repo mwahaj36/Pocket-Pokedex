@@ -1,6 +1,6 @@
 # Pocket Pokedex
 
-A lightweight and stylish desktop app built with **Python** and **PyQt5** that lets you search for any Pokémon using the [PokeAPI](https://pokeapi.co/). Displays Pokémon stats, types, and official sprite images in a neat, responsive interface.
+A lightweight desktop app built with **Python** and **PyQt5** that lets you search for any Pokémon using the [PokeAPI](https://pokeapi.co/). Displays Pokémon stats, types, and official sprite images in a neat, responsive interface.
 
 <br>
 
