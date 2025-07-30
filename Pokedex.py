@@ -13,12 +13,34 @@ from io import BytesIO
 class Pokedex(QMainWindow):
     def __init__(self):
         super().__init__()
+                   # Create a central widget and set it
+        self.centralWidget = QWidget()
+        self.setCentralWidget(self.centralWidget)
+
+        # Main layout
+        self.mainLayout = QVBoxLayout()
+        self.centralWidget.setLayout(self.mainLayout)
         self.setWindowTitle("Pocket Pokedex")
         self.setGeometry(100, 100, 900, 500)
-        self.Title = QLabel("Pocket Pokedex", self)
+        self.Title = QLabel("Pocket Pokedex")
         self.setWindowIcon(QIcon("src/logo.png"))
-        self.InitUI()
 
+
+        #INput
+        inputLayout=QHBoxLayout()
+        self.input=QLineEdit()
+        self.input.setPlaceholderText("Enter Pokemon Name (e.g. pikachu)")
+        self.searchButton=QPushButton()
+        self.searchButton.setText("GO")
+        self.searchButton.clicked.connect(self.getPokemon)
+        inputLayout.addWidget(self.input)
+        inputLayout.addWidget(self.searchButton)
+        self.mainLayout.addWidget(self.Title)
+        self.mainLayout.addLayout(inputLayout)
+
+        self.InitUI()
+    def getPokemon(self):
+        pass
     def InitUI(self):
         font_id=QFontDatabase.addApplicationFont("src/Pokemon.ttf")
         fontFamily=QFontDatabase.applicationFontFamilies(font_id)[0]
@@ -29,8 +51,22 @@ class Pokedex(QMainWindow):
             color: white;
             font-size: 50px;      
         """)
-        self.Title.setGeometry(0, 0, 900, 100)
+        
         self.Title.setAlignment(Qt.AlignCenter)
+        self.input.setStyleSheet("""
+                                background-color: #2e2e2e;
+                                color: white;
+                                border-radius: 5px;
+                                padding: 10px
+
+                                 """)
+        self.searchButton.setStyleSheet("""
+                                background-color: #a8030c;
+                                color: white;
+                                font-weight: bold;
+                                border-radius: 5px;
+                                padding: 11px
+                                 """)
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
