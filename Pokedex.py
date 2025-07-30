@@ -1,4 +1,5 @@
 import sys
+import os
 import requests
 from PyQt5.QtWidgets import (
     QApplication, QWidget, QLabel, QLineEdit,
@@ -7,6 +8,12 @@ from PyQt5.QtWidgets import (
 from PyQt5.QtGui import QPixmap, QFontDatabase, QFont, QIcon
 from PyQt5.QtCore import Qt
 from io import BytesIO
+
+# Helper function to load resources correctly in PyInstaller
+def resource_path(relative_path):
+    if hasattr(sys, '_MEIPASS'):
+        return os.path.join(sys._MEIPASS, relative_path)
+    return os.path.join(os.path.abspath("."), relative_path)
 
 
 class Pokedex(QMainWindow):
@@ -22,7 +29,7 @@ class Pokedex(QMainWindow):
         # Window Settings
         self.setWindowTitle("Pocket Pokedex")
         self.setGeometry(100, 100, 900, 500)
-        self.setWindowIcon(QIcon("src/logo.png"))
+        self.setWindowIcon(QIcon(resource_path("src/logo.ico")))
 
         # Title
         self.Title = QLabel("Pocket Pokedex")
@@ -123,7 +130,8 @@ class Pokedex(QMainWindow):
 
     def InitUI(self):
         # Load custom font
-        font_id = QFontDatabase.addApplicationFont("src/Pokemon.ttf")
+        font_path = resource_path("src/Pokemon.ttf")
+        font_id = QFontDatabase.addApplicationFont(font_path)
         if font_id != -1:
             fontFamily = QFontDatabase.applicationFontFamilies(font_id)[0]
             myFont = QFont(fontFamily)
