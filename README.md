@@ -25,6 +25,19 @@ A lightweight desktop app built with **Python** and **PyQt5** that lets you sear
 
 ---
 
+
+## Download
+
+👉 [Download the latest release](https://github.com/mwahaj36/Pocket-Pokedox/releases) from the **Releases** section.
+
+- ✅ Pre-built `.exe` for Windows available
+- 🧪 Python source version for Linux/macOS
+
+> No installation needed — just run it!
+
+---
+
+
 ## Credits
 - **Font**: [Pokemon Solid](https://www.dafont.com/pokemon.font) by Nintendo/Dafont **for personal/non-commercial use only**.
 - **Pokéball League Logo**: [Pokémon Pokéball League Vector Logo](https://seeklogo.com/vector-logo/524672/pokemon-pokeball-legue) by **YWR Studio** via [SeekLogo.com](https://seeklogo.com/) **used for educational/demo purposes only**.
